@@ -43,9 +43,6 @@ jobs:
             RANLIB="$RANLIB" \
             STRIP="$STRIP" \
             -j$(nproc)
-      - name: Strip binary
-        run: |
-          $STRIP bin/hev-socks5-tunnel
       - name: Verify
         run: |
           file bin/hev-socks5-tunnel
