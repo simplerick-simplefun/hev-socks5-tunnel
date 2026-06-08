@@ -11,10 +11,8 @@ STRIP=$(CROSS_PREFIX)strip
 # Android's Bionic libc already provides pthread functions.
 ifeq ($(findstring android,$(CC)),)
     PTHREAD_LDFLAG=-lpthread
-    SHARED_PTHREAD_LDFLAG=-pthread
 else
     PTHREAD_LDFLAG=
-    SHARED_PTHREAD_LDFLAG=
 endif
 
 CCFLAGS=-O3 -pipe -Wall -Werror $(CFLAGS) \
@@ -49,7 +47,7 @@ THIRDPARTS=$(THIRDPARTDIR)/yaml \
 
 $(STATIC_TARGET) : CCFLAGS+=-DENABLE_LIBRARY
 $(SHARED_TARGET) : CCFLAGS+=-DENABLE_LIBRARY -fPIC
-$(SHARED_TARGET) : LDFLAGS+=-shared $(SHARED_PTHREAD_LDFLAG)
+$(SHARED_TARGET) : LDFLAGS+=-shared -pthread
 
 -include build.mk
 CCFLAGS+=$(VERSION_CFLAGS)
