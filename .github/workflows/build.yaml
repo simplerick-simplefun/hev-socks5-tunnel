@@ -45,6 +45,8 @@ jobs:
           path: |
             hev-socks5-tunnel-android-armeabi-v7a
             hev-socks5-tunnel-android-arm64-v8a
+            hev-socks5-tunnel-android-x86
+            hev-socks5-tunnel-android-x86_64
           if-no-files-found: error
           retention-days: 1
 
