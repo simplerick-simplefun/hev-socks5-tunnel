@@ -6,8 +6,7 @@
 	url = https://github.com/heiher/yaml
 [submodule "third-part/lwip"]
 	path = third-part/lwip
-	url = https://github.com/simplerick-simplefun/lwip
-	branch = android
+	url = https://github.com/heiher/lwip
 [submodule "src/core"]
 	path = src/core
 	url = https://github.com/heiher/hev-socks5-core
